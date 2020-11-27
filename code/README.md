@@ -1,0 +1,3 @@
+## Code
+
+This folder contains scripts for the project.
