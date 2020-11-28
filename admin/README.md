@@ -1,3 +1,3 @@
 ## Admin
 
-This folder contains admin for the project.
+This folder contains admin for the tutorial.
