@@ -1,3 +1,3 @@
 ## Instructions
 
-This folder contains the project instructions.
+This folder contains the tutorial instructions.
