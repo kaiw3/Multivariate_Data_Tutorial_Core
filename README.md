@@ -20,6 +20,7 @@ Kai Westwell: s1727718@ed.ac.uk
     - [License](admin/LICENSE)
     - [Workflow](admin/Workflow.md)
     - [Etiquette](admin/etiquette.md)
+- [Instructions](instructions/)
   
 # Technical Specifics: 
 
