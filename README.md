@@ -5,6 +5,8 @@ This repo contains all of the data required for the tutorial in multivariate ana
 ### Contacts
 Kai Westwell: s1727718@ed.ac.uk
 
+Tutorial Link: https://kaiw3.github.io/multivariate_data_tutorial/#section1a
+
 # Contents
 - [Instructions](instructions/)
 - [Code](code/)
