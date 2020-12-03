@@ -16,6 +16,8 @@
 
 # RStudio files
 tutorial-kaiw3.Rproj
+.Rproj.user/
+*.Rproj
 
 # produced vignettes
 vignettes/*.html
@@ -34,3 +36,7 @@ vignettes/*.pdf
 
 # Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
 rsconnect/
+
+# DS_Store file
+*.DS_Store
+.Rproj.user
