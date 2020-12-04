@@ -1,6 +1,6 @@
 <center><img src="{{ site.url }}{{ site.baseurl }}/tut_banner.png" alt="Img"></center>
 ![Some text]({{site.url}}{{site.baseurl}}/tut_banner.png)
-![this screenshot](https://github.com/kaiw3/tutorial-kaiw3/blob/master/photos/tut_banner.png)
+![this screenshot](https://github.com/EdDataScienceEES/tutorial-kaiw3/tree/master/photos/tut_banner.png)
 Created by Kai Westwell
 <hr>
 
