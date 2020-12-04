@@ -90,15 +90,18 @@ Now we have arranged the data, we can perform the nmds.
 ```
 # Perform nmds and fit environmental and species vectors
 barents.mds <- metaMDS(barents_spp, distance = "bray", autotransform = FALSE)
-barents.envfit <- envfit(barents.mds, barents_env, permutations = 999) # Fit environmental vectors
-barents.sppfit <- envfit(barents.mds, barents_spp, permutations = 999) # Fit species vectors
+barents.envfit <- envfit(barents.mds, barents_env, permutations = 999) 
+# Fit environmental vectors
+barents.sppfit <- envfit(barents.mds, barents_spp, permutations = 999) 
+# Fit species vectors
 ```
 
 <br/>
 
 Have a look at the nmds output and check the stress. Sometimes he nmds cant represent all of the relationships between variables accurately. This is reflected by a high stress value. A general rule is if the stress value is below 0.2, the plot is generally ok.
 ```
-barents.mds  # Stress value is less than 0.2, which is good. Shows how easy it was to condense multidimensional data into two dimensional space
+barents.mds  # Stress value is less than 0.2, which is good.
+# Shows how easy it was to condense multidimensional data into two dimensional space.
 ```
 
 <center> <img src="{{ site.baseurl }}/barents_nmds.png" alt="nmds" style="width: 800px;"/> </center>
@@ -108,9 +111,12 @@ Figure 1 - Output from NMDS with low stress.
 After you have performed the nmds, you need to save the outputs so we can graph it later. Here you will also group the data by the environmental variables we are interested in : depth and temperature.
 ```
 # Save the results from the nmds and group the data by environmental variables
-site.scrs <- as.data.frame(scores(barents.mds, display = "sites"))  # save NMDS results into dataframe
-site.scrs <- cbind(site.scrs, Depth = barents_env$Depth_cat)  # make depth a grouping variable and save to dataframe
-site.scrs <- cbind(site.scrs, Temperature = barents_env$Temp_cat) # make temperature a grouping variable and save to dataframe
+site.scrs <- as.data.frame(scores(barents.mds, display = "sites"))  
+# save NMDS results into dataframe
+site.scrs <- cbind(site.scrs, Depth = barents_env$Depth_cat)  
+# make depth a grouping variable and save to dataframe
+site.scrs <- cbind(site.scrs, Temperature = barents_env$Temp_cat) 
+# make temperature a grouping variable and save to dataframe
 head(site.scrs)  # View the dataframe
 ```
 <br/>
@@ -128,10 +134,14 @@ Figure 2 - Output from NDMS saved in a dataframe and grouped by environmental va
 Now save the species specific data from the nmds analysis to a dataframe, so that we can plot this separately on the nmds plot later. Examine the dataframe so that you are comfortable with using it in later stages.
 ```
 # Save species data from nmds to dataframe
-spp.scrs <- as.data.frame(scores(barents.sppfit, display = "vectors"))  # Save species values into dataframe
-spp.scrs <- cbind(spp.scrs, Species = rownames(spp.scrs))  # Add species names to dataframe
-spp.scrs <- cbind(spp.scrs, pval = barents.sppfit$vectors$pvals) # Add p values to dataframe so you can select species which are significant
-sig.spp.scrs <- subset(spp.scrs, pval<=0.05) # Show only significant species (using 0.05 as cutoff)
+spp.scrs <- as.data.frame(scores(barents.sppfit, display = "vectors"))  
+# Save species values into dataframe
+spp.scrs <- cbind(spp.scrs, Species = rownames(spp.scrs))  
+# Add species names to dataframe
+spp.scrs <- cbind(spp.scrs, pval = barents.sppfit$vectors$pvals) 
+# Add p values to dataframe so you can select species which are significant
+sig.spp.scrs <- subset(spp.scrs, pval<=0.05) 
+# Show only significant species (using 0.05 as cutoff)
 head(spp.scrs)  # View dataframe
 ```
 
@@ -140,10 +150,14 @@ head(spp.scrs)  # View dataframe
 Do the same thing with the environmental variables. This will let you plot the vector information of either the species or environmental groups, or both, on top of the nmds plot.
 ```
 # Save environmental variables
-env.scores.barents <- as.data.frame(scores(barents.envfit, display = "vectors"))  # Extract nmds scores of all environmental variables from envifit dataframe
-env.scores.barents <- cbind(env.scores.barents, env.variables = rownames(env.scores.barents))  # Name them 
-env.scores.barents <- cbind(env.scores.barents, pval = barents.envfit$vectors$pvals) # Add p values to dataframe
-sig.env.scrs <- subset(env.scores.barents, pval<=0.05) # Show only significant variables (using 0.05 as cutoff)
+env.scores.barents <- as.data.frame(scores(barents.envfit, display = "vectors"))  
+# Extract nmds scores of all environmental variables from envifit dataframe
+env.scores.barents <- cbind(env.scores.barents, env.variables = rownames(env.scores.barents))  
+# Name them 
+env.scores.barents <- cbind(env.scores.barents, pval = barents.envfit$vectors$pvals) 
+# Add p values to dataframe
+sig.env.scrs <- subset(env.scores.barents, pval<=0.05) 
+# Show only significant variables (using 0.05 as cutoff)
 head(env.scores.barents)  # View dataframe
 ```
 
@@ -152,12 +166,15 @@ head(env.scores.barents)  # View dataframe
 Now we can get to the fun part, plotting our nmds data! We'll use ggplot2 which you should already be familiar with from <a href="https://ourcodingclub.github.io/tutorials/datavis/" target="_blank">previous coding club tutorials</a>. Here we will use all of the same ggplot2 functions you have already learned about, so this section should be relatively straightforward.
 ```
 # Basic nmds
-(nmds.plot.barents <- ggplot(site.scrs, aes(x=NMDS1, y=NMDS2))+ # Create the plot
-  geom_point(aes(x = NMDS1, y = NMDS2, colour = factor(site.scrs$Depth), shape = factor(site.scrs$Temperature)), size = 2)+ # Add site points to plot with the shape determined by temperature and colour determined by depth
-  coord_fixed()+
-  theme_classic()+ 
-  theme(panel.background = element_rect(fill = NA, colour = "black", size = 1, linetype = "solid"))+
-  labs(colour = "Depth", shape = "Temperature", title = "Does Fish Species Composition Change at\n Varying Water Depths and Temperatures")+ # Add legend labels
+(nmds.plot.barents <- ggplot(site.scrs, aes(x=NMDS1, y=NMDS2)) + 
+# Create the plot
+  geom_point(aes(x = NMDS1, y = NMDS2, colour = factor(site.scrs$Depth), shape = factor(site.scrs$Temperature)), size = 2) + 
+  # Add site points to plot with the shape determined by temperature and colour determined by depth
+  coord_fixed() +
+  theme_classic() + 
+  theme(panel.background = element_rect(fill = NA, colour = "black", size = 1, linetype = "solid")) +
+  labs(colour = "Depth", shape = "Temperature", title = "Does Fish Species Composition Change at\n Varying Water Depths and Temperatures") + 
+  # Add legend labels
   theme(legend.position = "right", legend.text = element_text(size = 12), legend.title = element_text(size = 12), axis.text = element_text(size = 10)) # Add legend
 )
 ```
@@ -173,8 +190,10 @@ Lets add an overlay with species vectors.
 ```
 # Add species vector arrows
 (nmds.plot.barents.2 <- nmds.plot.barents +
-  geom_segment(data = sig.spp.scrs, aes(x = 0, xend=NMDS1, y=0, yend=NMDS2), arrow = arrow(length = unit(0.25, "cm")), colour = "grey10", lwd=0.3) + # Add vector arrows for significant species
-  ggrepel::geom_text_repel(data = sig.spp.scrs, aes(x=NMDS1, y=NMDS2, label = Species), cex = 3, direction = "both", segment.size = 0.25) # Add labels for species (with ggrepel::geom_text_repel so that labels do not overlap)
+  geom_segment(data = sig.spp.scrs, aes(x = 0, xend=NMDS1, y=0, yend=NMDS2), arrow = arrow(length = unit(0.25, "cm")), colour = "grey10", lwd=0.3) + 
+  # Add vector arrows for significant species
+  ggrepel::geom_text_repel(data = sig.spp.scrs, aes(x=NMDS1, y=NMDS2, label = Species), cex = 3, direction = "both", segment.size = 0.25) 
+  # Add labels for species (with ggrepel::geom_text_repel so that labels do not overlap)
 )
 ```
 
@@ -187,8 +206,10 @@ Great! Now we can see certain species group more in warmer water, or in colder w
 ```
 # Add environmental variable vector arrows
 (nmds.plot.barents.3 <- nmds.plot.barents +
-  geom_segment(data = sig.env.scrs, aes(x = 0, xend=NMDS1, y=0, yend=NMDS2), arrow = arrow(length = unit(0.25, "cm")), colour = "grey10", lwd=0.3) + # Add vector arrows of significant environmental variables
-  ggrepel::geom_text_repel(data = sig.env.scrs, aes(x=NMDS1, y=NMDS2, label = env.variables), cex = 4, direction = "both", segment.size = 0.25) # Add labels
+  geom_segment(data = sig.env.scrs, aes(x = 0, xend=NMDS1, y=0, yend=NMDS2), arrow = arrow(length = unit(0.25, "cm")), colour = "grey10", lwd=0.3) + 
+  # Add vector arrows of significant environmental variables
+  ggrepel::geom_text_repel(data = sig.env.scrs, aes(x=NMDS1, y=NMDS2, label = env.variables), cex = 4, direction = "both", segment.size = 0.25) 
+  # Add labels
 )
 ```
 
@@ -210,7 +231,9 @@ Now we can run the ANOSIM, first looking at the depth grouping. This shows that 
 ```
 # ANOSIM with depth grouping
 bar_depth <- anosim(mat_bar_spp, barents_env_raw$Depth, distance = "bray", permutations = 9999)
-bar_depth  # ANOSIM significance is less than 0.05 so it is significant. R statistic is relatively low, suggesting the groups are similar to each other.
+bar_depth  
+# ANOSIM significance is less than 0.05 so it is significant. 
+# R statistic is relatively low, suggesting the groups are similar to each other.
 
 ```
 
@@ -223,7 +246,8 @@ And now lets run the ANOSIM of the species grouped by temperature. This is also 
 ```
 # ANOSIM with temperature grouping
 bar_temp <- anosim(mat_bar_spp, barents_env_raw$Temperature, distance = "bray", permutations = 9999)
-bar_temp  # Significance means this looks good too, and relatively low R statistic suggests similarity between groups.
+bar_temp  # Significance means this looks good too.
+# And relatively low R statistic suggests similarity between groups.
 ```
 
 <center> <img src="{{ site.baseurl }}/anosim_temp.png" alt="anosim" style="width: 800px;"/> </center>
