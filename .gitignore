@@ -5,8 +5,6 @@
 # Session Data files
 .RData
 
-usethis::use_git_ignore(".Rproj.user")
-
 # User-specific files
 .Ruserdata
 
