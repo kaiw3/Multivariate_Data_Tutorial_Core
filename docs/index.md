@@ -101,7 +101,7 @@ Have a look at the nmds output and check the stress. Sometimes he nmds cant repr
 barents.mds  # Stress value is less than 0.2, which is good. Shows how easy it was to condense multidimensional data into two dimensional space
 ```
 
-<center> <img src="{{ site.baseurl }}/photos/barents_nmds.png" alt="nmds" style="width: 800px;"/> </center>
+<center> <img src="{{ site.baseurl }}/outputs/barents_nmds.png" alt="nmds" style="width: 800px;"/> </center>
 Figure 1 - Output from NMDS with low stress.
 <br/>
 
