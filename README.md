@@ -13,18 +13,12 @@ Kai Westwell: s1727718@ed.ac.uk
 # Contents
 - [Instructions](instructions/)
 - [Code](code/)
-  - Including: 
-    - [Final script](tutorial_code.R)
+  - Includes final script and old script
 - [Data](data/)
-  - Including:
-    - [Barents Sea Fish Data](barents_data)
+  - Includes Barents Sea fish data
 - [Docs](docs/) 
   - Includes all of the behind the scenes files for the tutorial 
 - [Admin](admin/) 
-  - Including: 
-    - [License](admin/LICENSE)
-    - [Workflow](admin/Workflow.md)
-    - [Etiquette](admin/etiquette.md)
 - [Instructions](instructions/)
   
 # Technical Specifics: 
