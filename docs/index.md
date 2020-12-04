@@ -1,5 +1,5 @@
-<center><img src="{{ site.baseurl }}/photos/tut_banner.png" alt="Img"></center>
-
+<center><img src="{{site.url}}{{ site.baseurl }}/photos/tut_banner.png" alt="Img"></center>
+![Some text]({{site.url}}{{site.baseurl}}/photos/tut_banner.png)
 Created by Kai Westwell
 <hr>
 
