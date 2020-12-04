@@ -101,7 +101,7 @@ Have a look at the nmds output and check the stress. Sometimes he nmds cant repr
 barents.mds  # Stress value is less than 0.2, which is good. Shows how easy it was to condense multidimensional data into two dimensional space
 ```
 
-<center> <img src="{{ site.baseurl }}/outputs/barents_nmds.png" alt="nmds" style="width: 800px;"/> </center>
+<center> <img src="{{ site.baseurl }}/barents_nmds.png" alt="nmds" style="width: 800px;"/> </center>
 Figure 1 - Output from NMDS with low stress.
 <br/>
 
@@ -120,7 +120,7 @@ Take a look at the output you have saved to become familiar with the structure f
 head(site.scrs)  # View dataframe
 ```
 
-<center> <img src="{{ site.baseurl }}/photos/grouped_nmds.png" alt="nmds" style="width: 600px;"/> </center>
+<center> <img src="{{ site.baseurl }}/grouped_nmds.png" alt="nmds" style="width: 600px;"/> </center>
 Figure 2 - Output from NDMS saved in a dataframe and grouped by environmental variables.
 
 <br/>
@@ -162,7 +162,7 @@ Now we can get to the fun part, plotting our nmds data! We'll use ggplot2 which 
 )
 ```
 
-<center> <img src="{{ site.baseurl }}/photos/nmds_1.png" alt="nmds" style="width: 1400px;"/> </center>
+<center> <img src="{{ site.baseurl }}/nmds_1.png" alt="nmds" style="width: 1400px;"/> </center>
 Figure 3 - Basic NMDS plot.
 
 <br/>
@@ -178,7 +178,7 @@ Lets add an overlay with species vectors.
 )
 ```
 
-<center> <img src="{{ site.baseurl }}/photos/nmds_2.png" alt="nmds" style="width: 1400px;"/> </center>
+<center> <img src="{{ site.baseurl }}/nmds_2.png" alt="nmds" style="width: 1400px;"/> </center>
 Figure 4 - NMDS plot with species vector overlay.
 
 <br/>
@@ -192,7 +192,7 @@ Great! Now we can see certain species group more in warmer water, or in colder w
 )
 ```
 
-<center> <img src="{{ site.baseurl }}/photos/nmds_3.png" alt="nmds" style="width: 1400px;"/> </center>
+<center> <img src="{{ site.baseurl }}/nmds_3.png" alt="nmds" style="width: 1400px;"/> </center>
 Figure 5 - NMDS plot with environmental vector overlay.
 
 <a name="section3"></a>
@@ -214,7 +214,7 @@ bar_depth  # ANOSIM significance is less than 0.05 so it is significant. R stati
 
 ```
 
-<center> <img src="{{ site.baseurl }}/photos/anosim_depth.png" alt="anosim" style="width: 800px;"/> </center>
+<center> <img src="{{ site.baseurl }}/anosim_depth.png" alt="anosim" style="width: 800px;"/> </center>
 Figure 6 - ANOSIM looking at depth. Significant and low r statistic.
 
 <br/>
@@ -226,7 +226,7 @@ bar_temp <- anosim(mat_bar_spp, barents_env_raw$Temperature, distance = "bray", 
 bar_temp  # Significance means this looks good too, and relatively low R statistic suggests similarity between groups.
 ```
 
-<center> <img src="{{ site.baseurl }}/photos/anosim_temp.png" alt="anosim" style="width: 800px;"/> </center>
+<center> <img src="{{ site.baseurl }}/anosim_temp.png" alt="anosim" style="width: 800px;"/> </center>
 Figure 7 - ANOSIM looking at temperature. Significant and low r statistic.
 
 <a name="section4"></a>
@@ -257,7 +257,7 @@ Congradulations! You are now able to perform two different multivariate statisti
 
 But for now, relax and enjoy the feeling of having explored the factors affecting fish communities in the Barents Sea.
 
-<center> <img src="{{ site.baseurl }}/photos/barents_sea.png" alt="anosim" style="width: 800px;"/> </center>
+<center> <img src="{{ site.baseurl }}/barents_sea.png" alt="anosim" style="width: 800px;"/> </center>
 Figure 8 - The Barents Sea
 
 <br/>
