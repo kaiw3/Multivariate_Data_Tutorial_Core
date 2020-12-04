@@ -18,15 +18,13 @@ Kai Westwell: s1727718@ed.ac.uk
 - [Data](data/)
   - Including:
     - [Barents Sea Fish Data](barents_data)
-- [Outputs](outputs/) 
-  - Includes all of the graphs for the tutorial 
+- [Docs](docs/) 
+  - Includes all of the behind the scenes files for the tutorial 
 - [Admin](admin/) 
   - Including: 
     - [License](admin/LICENSE)
     - [Workflow](admin/Workflow.md)
     - [Etiquette](admin/etiquette.md)
-- [Photos](photos/)
-  - Includes photos used in the tutorial
 - [Instructions](instructions/)
   
 # Technical Specifics: 
