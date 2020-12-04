@@ -20,7 +20,10 @@ Kai Westwell: s1727718@ed.ac.uk
   - Includes all of the behind the scenes files for the tutorial 
 - [Admin](admin/) 
 - [Instructions](instructions/)
-  
+ 
+# Feedback
+Feedback will be provided by @jwieczor via the issues tab.
+ 
 # Technical Specifics: 
 
 ### R and RStudio
