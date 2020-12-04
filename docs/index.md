@@ -179,7 +179,7 @@ Now we can get to the fun part, plotting our nmds data! We'll use ggplot2 which 
 )
 ```
 
-<center> <img src="{{ site.baseurl }}/nmds_1.png" alt="nmds" style="width: 1400px;"/> </center>
+<center> <img src="{{ site.baseurl }}/nmds_1.png" alt="nmds" style="width: 1800px;"/> </center>
 Figure 3 - Basic NMDS plot.
 
 <br/>
