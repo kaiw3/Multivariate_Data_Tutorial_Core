@@ -1,4 +1,5 @@
 theme: jekyll-theme-cayman
 title: Intro to Multivariate Data Analysis
 description: Using R to Analyse Data with Many Variables
-baseurl: /tutorial-kaiw3
+baseurl: "/tutorial-kaiw3"
+url: "https://eddatascienceees.github.io/tutorial-kaiw3/"
