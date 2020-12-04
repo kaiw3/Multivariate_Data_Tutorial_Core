@@ -1,6 +1,5 @@
-<center><img src="{{ site.baseurl }}/tut_banner.png" alt="Img"></center>
-![Some text]({{site.url}}{{site.baseurl}}/tut_banner.png)
-![this screenshot](https://github.com/EdDataScienceEES/tutorial-kaiw3/tree/master/photos/tut_banner.png)
+<center><img src="{{ site.baseurl }}/photos/tut_banner.png" alt="Img"></center>
+
 Created by Kai Westwell
 <hr>
 
