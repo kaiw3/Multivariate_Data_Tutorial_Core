@@ -1,4 +1,2 @@
 theme: jekyll-theme-cayman
-header {
-  display: none;
-}
+title-heading: false
