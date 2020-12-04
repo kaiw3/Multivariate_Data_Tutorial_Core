@@ -5,6 +5,11 @@ This repo contains all of the data required for the tutorial in multivariate ana
 ### Contacts
 Kai Westwell: s1727718@ed.ac.uk
 
+# Tutorial Link 
+- [Access the tutorial here](https://kaiw3.github.io/multivariate_data_tutorial)
+- [The associated repository can be found here](https://github.com/kaiw3/multivariate_data_tutorial)
+
+
 # Contents
 - [Instructions](instructions/)
 - [Code](code/)
@@ -20,6 +25,8 @@ Kai Westwell: s1727718@ed.ac.uk
     - [License](admin/LICENSE)
     - [Workflow](admin/Workflow.md)
     - [Etiquette](admin/etiquette.md)
+- [Photos](photos/)
+  - Includes photos used in the tutorial
 - [Instructions](instructions/)
   
 # Technical Specifics: 
@@ -30,7 +37,8 @@ Kai Westwell: s1727718@ed.ac.uk
 - RStudio Version 1.3.1093
 
 ### Packages used 
-`tidyverse`
+- `tidyverse` 
+- `vegan`
 
 ### References
 - Fossheim, M., Nilssen, E.M. & Aschan, M. (2006) Fish assemblages in the Barents Sea. Marine Biology Research, 2:260-269
