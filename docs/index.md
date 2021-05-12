@@ -291,13 +291,13 @@ bar_temp
 ```
 
 <center> <img src="{{ site.baseurl }}/anosim_temp.png" alt="anosim" style="width: 800px;"/> </center>
-Figure 7 - ANOSIM looking at temperature. Significant and low r statistic.
-
-<a name="section4"></a>
+<i> Figure 7 - ANOSIM looking at temperature. Significant and low r statistic. </i>
 
 <br/>
 
 This is also significant, and has a similar r statistic to depth. However, this is strong enough to infer that there is a difference between groups, even though it isn't the strongest difference. This is backed up by the low stress level in the NMDS, suggesting that the model is accurate.
+
+<a name="section4"></a>
 
 ## 4. Challenge
 
