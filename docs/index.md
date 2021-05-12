@@ -23,7 +23,10 @@ This tutorial will cover some of the basic methods in analysing multivariate dat
 
 ## Introduction
 
-Ecological data can be complex. Often, large numbers of variables need to be studied in order to obtain an accurate picture of the system in question. This complexity can make the data hard to interpret, and even harder to analyse statistically. This tutorial will take you through the basics of understanding what multivariate data look like, and will introduce you to some of the ways we can use statistics to interpret these data. In order to transition into dealing with the wide array of ecological data you are likely to be presented with when looking at real systems, it's important to be able to deal with complex data. And hopefully, as you take these skills forward, you will find more and more ways that to can apply multivariate stats into solving problems!
+Ecological data can be complex. Often, large numbers of variables need to be studied in order to obtain an accurate picture of the system in question. This complexity can make the data hard to interpret, and even harder to analyse statistically. This tutorial will take you through the basics of understanding what multivariate data look like, and will introduce you to some of the ways we can use statistics to interpret these data. In order to transition into dealing with the wide array of ecological data you are likely to be presented with when looking at real systems, it's important to be able to deal with complex data. And hopefully, as you take these skills forward, you will find more and more ways that you can apply multivariate stats into solving problems!
+
+This tutorial will cover some slightly more complex topics, so if you are unfamiliar with using R, then you can find an introductory tutorial <a href="https://ourcodingclub.github.io/tutorials/intro-to-r/" target="blank"> here</a>. You can also find another Coding Club tutorial covering more information on multivariate stats, including NMDS and PCA, <a 
+href="https://ourcodingclub.github.io/tutorials/ordination/" target="blank"> here</a>.
 
 You can get all of the resources for this tutorial from <a href="https://github.com/kaiw3/multivariate_data_tutorial" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
 
@@ -67,6 +70,10 @@ library(tidyverse)  # For data tidying functions and plotting
 # Load data
 barents <- read.csv("data/barents_data.csv")
 ```
+
+<br/>
+
+The dataset we're using here was collected from three surveys conducted in the Southwestern Barents Sea, in spring 1997-1999. The data were collected as part of the annual shrimp survey conducted by the Norwegian Institute of Aquaculture and Fisheries, however the fish bycatch were also recorded, and that is the data we are looking at here. We're going to look to better understand the assemblages and distributions of the 57 fish species recorded in this survey of the Barents Sea, using multivariate statistics.
 
 <br/>
 
@@ -163,7 +170,7 @@ head(env.scores.barents)  # View dataframe
 
 <br/>
 
-Now we can get to the fun part, plotting our nmds data! We'll use ggplot2 which you should already be familiar with from <a href="https://ourcodingclub.github.io/tutorials/datavis/" target="_blank">previous coding club tutorials</a>. Here we will use all of the same ggplot2 functions you have already learned about, so this section should be relatively straightforward.
+Now we can get to the fun part, plotting our nmds data! We'll use ggplot2 for this. If you are not familiar with using this package, dont worry! We already have a tutorial covering all the basics <a href="https://ourcodingclub.github.io/tutorials/datavis/" target="_blank">here</a>. Here we will use all of the same ggplot2 functions covered in this previous tutorial, so this section should be relatively straightforward.
 ```
 # Basic nmds
 (nmds.plot.barents <- ggplot(site.scrs, aes(x=NMDS1, y=NMDS2)) + 
