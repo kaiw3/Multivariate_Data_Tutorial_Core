@@ -241,7 +241,10 @@ Great! Now we can see certain species group more in warmer water, or in colder w
 
 ```
 ggsave(filename = "filepath/filename.png", name_of_plot, height = 7, width = 14)
-# Change the filename to the filepath you want it to be saved to / whatever you want to call it and add the file extension to the end. Then include the name of the plot you want to save (eg. nmds.plot.barents.2), and then save it with whatever dimensions you prefer.
+# Change the filename to the filepath you want it to be saved to / whatever you want to call it.
+# Then add the file extension to the end. 
+# Now you can include the name of the plot you want to save (eg. nmds.plot.barents.2).
+# Then save it with whatever dimensions you prefer.
 ```
 
 <br/>
