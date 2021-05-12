@@ -84,7 +84,7 @@ Now let's make the data easier to work with. Separate the species and environmen
 # Separate environmental data and species data
 barents_spp <- barents %>% select(Re_hi:Tr_spp)
 
-barents_env_raw <- barents %>% select(ID.No:Temperature)
+barents_env_raw <- barents %>% select(ID_No:Temperature)
 
 
 # Create ordinal groups for depth and temperature variables
@@ -218,7 +218,7 @@ Now we can get to the fun part, plotting our nmds data! We'll use ggplot2 for th
 <br/>
 <br/>
 
-And here we have an nmds plot! We can see that there are some different groupings going on here, with some samples being found in warmer temperatures or greater depths, for example. But we don't know which species these groups relate to...it's luck we saved the species data from the nmds then!<br/>
+And here we have an nmds plot! We can see that there are some different groupings going on here, with some samples being found in warmer temperatures or greater depths, for example. But we don't know which species these groups relate to...it's lucky we saved the species data from the nmds then!<br/>
 
 Let's add an overlay with species vectors.
 ```
@@ -237,7 +237,16 @@ Let's add an overlay with species vectors.
 <br/>
 <br/>
 
-Great! Now we can see certain species group more in warmer water, or in colder water. We can also see how strong these relationships are based on the length of the arrows. While we can see that some environmental groupings exist, we may want to get a clearer idea of the directions these are acting in by overlaying the environmental nmds data that we also saved earlier. Let's include all of the measured variables just so that we can see what datasets with lots of variables would look like. Pick which ever is your favourite to save using `ggsave`. You might also want to make some changes to it to make it look nicer, for example, renaming the axes or changing the colours. If you haven't been through the data visualisation tutorial yet, you can find it [here](https://ourcodingclub.github.io/tutorials/datavis/).
+Great! Now we can see certain species group more in warmer water, or in colder water. We can also see how strong these relationships are based on the length of the arrows. While we can see that some environmental groupings exist, we may want to get a clearer idea of the directions these are acting in by overlaying the environmental nmds data that we also saved earlier. Let's include all of the measured variables just so that we can see what datasets with lots of variables would look like. Pick which ever is your favourite to save using `ggsave`. 
+
+```
+ggsave(filename = "filepath/filename.png", name_of_plot, height = 7, width = 14)
+# Change the filename to the filepath you want it to be saved to / whatever you want to call it and add the file extension to the end. Then include the name of the plot you want to save (eg. nmds.plot.barents.2), and then save it with whatever dimensions you prefer.
+```
+
+<br/>
+
+You might also want to make some changes to it to make it look nicer, for example, renaming the axes or changing the colours. If you haven't been through the data visualisation tutorial yet, you can find it [here](https://ourcodingclub.github.io/tutorials/datavis/).
 ```
 # Add environmental variable vector arrows
 (nmds.plot.barents.3 <- nmds.plot.barents +

@@ -15,7 +15,7 @@ barents <- read.csv("data/barents_data.csv")
 # Separate environmental data and species data
 barents_spp <- barents %>% select(Re_hi:Tr_spp)
 
-barents_env_raw <- barents %>% select(ID.No:Temperature)
+barents_env_raw <- barents %>% select(ID_No:Temperature)
 
 
 # Create ordinal groups for depth and temperature variables
