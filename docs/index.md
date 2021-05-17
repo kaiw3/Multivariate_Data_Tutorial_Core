@@ -74,11 +74,11 @@ barents <- read.csv("data/barents_data.csv")
 
 <br/>
 
-The dataset we're using here was collected from three surveys conducted in the Southwestern Barents Sea, in spring 1997-1999. The data were collected as part of the annual shrimp survey conducted by the Norwegian Institute of Aquaculture and Fisheries, however the fish bycatch were also recorded, and that is the data we are looking at here. We're going to look to better understand the assemblages and distributions of the 57 fish species recorded in this survey of the Barents Sea, using multivariate statistics.
+The dataset we're using here was collected from three surveys conducted in the Southwestern Barents Sea, in spring 1997-1999. The data were collected as part of the annual shrimp survey conducted by the Norwegian Institute of Aquaculture and Fisheries, however the fish bycatch was also recorded, and that is the data we are looking at here. We're going to look to better understand the assemblages and distributions of the 57 fish species recorded in this survey of the Barents Sea, using multivariate statistics.
 
 <br/>
 
-Now let's make the data easier to work with. Separate the species and environmental data and separate the environmental variables that we are interested in into ordinal groups.
+Now let's make the data easier to work with. Separate the species and environmental data, and separate the environmental variables that we are interested in into ordinal groups.
 
 ```
 # Separate environmental data and species data
@@ -237,10 +237,11 @@ Let's add an overlay with species vectors.
 <br/>
 <br/>
 
-Great! Now we can see certain species group more in warmer water, or in colder water. We can also see how strong these relationships are based on the length of the arrows. While we can see that some environmental groupings exist, we may want to get a clearer idea of the directions these are acting in by overlaying the environmental nmds data that we also saved earlier. Let's include all of the measured variables just so that we can see what datasets with lots of variables would look like. Pick which ever is your favourite to save using `ggsave`. 
+Great! Now we can see certain species group more in warmer water, or in colder water. We can also see how strong these relationships are based on the length of the arrows. While we can see that some environmental groupings exist, we may want to get a clearer idea of the directions these are acting in by overlaying the environmental nmds data that we also saved earlier. Let's include all of the measured variables just so that we can see what datasets with lots of variables would look like. Pick whichever is your favourite to save using `ggsave`. 
 
 ```
 ggsave(filename = "filepath/filename.png", name_of_plot, height = 7, width = 14)
+
 # Change the filename to the filepath you want it to be saved to / whatever you want to call it.
 # Then add the file extension to the end. 
 # Now you can include the name of the plot you want to save (eg. nmds.plot.barents.2).
