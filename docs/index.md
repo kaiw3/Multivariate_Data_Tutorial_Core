@@ -116,7 +116,7 @@ barents.mds  # Stress value is less than 0.2, which is good.
 # Shows how easy it was to condense multidimensional data into two dimensional space.
 ```
 
-<center> <img src="{{ site.baseurl }}/barents_nmds.png" alt="nmds" style="width: 800px;"/> </center>
+<center> <img src="barents_nmds.png" alt="nmds" style="width: 800px;"/> </center>
 <i> Figure 1 - Output from NMDS with low stress. </i>
 
 <br/>
@@ -149,7 +149,7 @@ Take a look at the output you have saved to become familiar with the structure f
 head(site.scrs)  # View dataframe
 ```
 
-<center> <img src="{{ site.baseurl }}/grouped_nmds.png" alt="nmds" style="width: 600px;"/> </center>
+<center> <img src="grouped_nmds.png" alt="nmds" style="width: 600px;"/> </center>
 <i> Figure 2 - Output from NDMS saved in a dataframe and grouped by environmental variables. </i>
 
 <br/>
@@ -210,7 +210,7 @@ Now we can get to the fun part, plotting our nmds data! We'll use ggplot2 for th
 )
 ```
 
-<center> <img src="{{ site.baseurl }}/nmds_1.png" alt="nmds" style="width: 1400px;"/> </center>
+<center> <img src="nmds_1.png" alt="nmds" style="width: 1400px;"/> </center>
 <i> Figure 3 - Basic NMDS plot. </i>
 
 <br/>
@@ -228,7 +228,7 @@ Let's add an overlay with species vectors.
 )
 ```
 
-<center> <img src="{{ site.baseurl }}/nmds_2.png" alt="nmds" style="width: 1400px;"/> </center>
+<center> <img src="nmds_2.png" alt="nmds" style="width: 1400px;"/> </center>
 <i> Figure 4 - NMDS plot with species vector overlay. </i>
 
 <br/>
@@ -257,7 +257,7 @@ You might also want to make some changes to it to make it look nicer, for exampl
 )
 ```
 
-<center> <img src="{{ site.baseurl }}/nmds_3.png" alt="nmds" style="width: 1400px;"/> </center>
+<center> <img src="nmds_3.png" alt="nmds" style="width: 1400px;"/> </center>
 <i> Figure 5 - NMDS plot with environmental vector overlay. </i>
 
 <a name="section3"></a>
@@ -284,7 +284,7 @@ bar_depth
 
 ```
 
-<center> <img src="{{ site.baseurl }}/anosim_depth.png" alt="anosim" style="width: 800px;"/> </center>
+<center> <img src="anosim_depth.png" alt="anosim" style="width: 800px;"/> </center>
 <i> Figure 6 - ANOSIM looking at depth. Significant and low r statistic. </i>
 
 <br/>
@@ -303,7 +303,7 @@ bar_temp
 # And relatively low R statistic suggests similarity between groups.
 ```
 
-<center> <img src="{{ site.baseurl }}/anosim_temp.png" alt="anosim" style="width: 800px;"/> </center>
+<center> <img src="anosim_temp.png" alt="anosim" style="width: 800px;"/> </center>
 <i> Figure 7 - ANOSIM looking at temperature. Significant and low r statistic. </i>
 
 <br/>
@@ -338,7 +338,7 @@ Congratulations! You are now able to perform two different multivariate statisti
 
 But for now, relax and enjoy being able to explore the factors affecting fish communities in the Barents Sea.
 
-<center> <img src="{{ site.baseurl }}/barents_sea.png" alt="anosim" style="width: 800px;"/> </center>
+<center> <img src="barents_sea.png" alt="anosim" style="width: 800px;"/> </center>
 <i> Figure 8 - The Barents Sea </i>
 
 <br/>
