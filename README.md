@@ -6,7 +6,7 @@ This repo contains all of the data required for the tutorial in multivariate ana
 Kai Westwell: s1727718@ed.ac.uk
 
 # Tutorial Link 
-- [Access the tutorial here](https://eddatascienceees.github.io/tutorial-kaiw3/)
+- [Access the tutorial here](https://kaiw3.github.io/Multivariate_Data_Tutorial_Core/docs/)
 - [The associated repository can be found here](https://github.com/kaiw3/multivariate_data_tutorial)
 
 
@@ -20,9 +20,6 @@ Kai Westwell: s1727718@ed.ac.uk
   - Includes all of the behind the scenes files for the tutorial 
 - [Admin](admin/) 
 - [Instructions](instructions/)
- 
-# Feedback
-Feedback will be provided by @jwieczor via the issues tab.
  
 # Technical Specifics: 
 
