@@ -1,4 +1,4 @@
-<center><img src="{{ site.baseurl }}/tut_banner.png" alt="Img" style="width: 1400px;"></center>
+<center><img src="tut_banner.png" alt="Img" style="width: 1400px;"></center>
 
 Created by Kai Westwell
 <hr>
