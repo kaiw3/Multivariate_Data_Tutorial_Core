@@ -14,7 +14,9 @@ Created by Kai Westwell
 
 #### <a href="#section3"> 3. Perform an ANOSIM analysis</a>
 
-#### <a href="#section4"> 4. Challenge</a>
+#### <a href="#section4"> 4. Perform SIMPER analysis</a>
+
+#### <a href="#section5"> 5. Challenge</a>
 
 #### <a href="#summary"> Summary</a>
 
@@ -312,7 +314,41 @@ This is also significant, and has a similar r statistic to depth. However, this 
 
 <a name="section4"></a>
 
-## 4. Challenge
+## 4. Perform SIMPER Analysis
+
+Now we know that temperature and depth do have a significant effect on species composition, based on the ANOSIM analysis, but which species are driving the majority the differences between the environmental variable groupings? To answer this question, we can use a SIMPER analysis. This will list the percentage contribution of each species in explaining the differences or dissimalarity between temperature and depth groupings. Lets try it out with our Barents Sea data to see what this looks like in practice.
+
+The simper function is still in the vegan package, so all we need to do is specify within the function the community structure matrix that we made for the ANOSIM earlier, and the groups that we want to compare between. Very similar to performing the ANOSIM.
+
+```
+# SIMPER looking for the species that contribute the most to the difference between depth groups
+simp_depth <- simper(mat_bar_spp, barents_env$Depth_cat)
+simp_depth
+summary(simp_depth, ordered = TRUE, digits = 3)
+```
+
+<center> <img src="SIMPER_Depth.png" alt="SIMPER" style="width: 800px;"/> </center>
+<i> Figure 8 - SIMPER analysis comparing the percentage dissimilarity that species contribute to differences between communities at different depth groupings. </i>
+
+When we run the SIMPER, we get a series of groups and a list of numbers and letters within each one. Lets break this down a little. Each heading that starts with a "$" symbol shows two of the depth groupings being compared. Within this you can see sub-headings such as "Se_me" which corresponds to each species we are looking at in the data. Under each of these headings is a number. This is the percentage of the dissimilarity between the 2 depth groupings, explained by this species. So in other words, the Se_me species drives 30% of the differences between communities at medium and deep depths. These values are cumulative, meaning that Se_me and the next species, Ga_mo, together explain 55.7% of the total dissimilarity between groups. Running the SIMPER function by default will give you either the 3 - 5 species that explain the most of the variance between groups, but if you want more information then you can run a summary of the function. This will show you the cumulative dissimilarity between groups of all species in the community, as well as some more useful info like the standard deviation around each species. Running a summary of the SIMPER will also give you the average abundance of each species in group a (ava) and group b (avb). 
+
+Now lets run another SIMPER for temperature in the same way.
+
+```
+# SIMPER looking for species contributing most to difference between temperature groups
+simp_temp <- simper(mat_bar_spp, barents_env$Temp_cat)
+simp_temp
+summary(simp_temp, ordered = TRUE, digits = 3)
+```
+
+<center> <img src="SIMPER_Temperature.png" alt="SIMPER" style="width: 800px;"/> </center>
+<i> Figure 9 - SIMPER analysis comparing the percentage dissimilarity that species contribute to differences between communities at different temperature groupings. </i>
+
+From this we can see that Se_me, Ga_mo, Me_ae, and Tr_es together are causing 81.7% of the differences in community composition between warm and medium temperature groupings. This could be a result of these 4 species being more abundant in one of these 2 water temperature groups, maybe because they are more temperature dependent than other species. Combining this new information with the ANOSIM output, we saw that there was only around a 20% difference in species compositions between temperature groups (from the R statistic). So it is likely that these 4 fish species have more of a  temperature preference than other fish species, but they may not exclusively live in a certain water temperature grouping, as the species compositions between these groups was similar. This is only one possible interpretation of these results, but take some time to look through all of the depth and temperature group comparisons and see if you can infer anything else from this!
+
+<a name="section5"></a>
+
+## 5. Challenge
 
 So...now you know how to run NMDS and ANOSIM analyses on multivariate data, as well as the situation in which these tests would be useful. So now it's your turn to try it out! Use the code below that groups the data by location (latitude and longitude), and test to see if species are grouped by one or both of these variables. Remember to also check that these groupings are statistically significant, and how strong they are.
 
@@ -339,7 +375,7 @@ Congratulations! You are now able to perform two different multivariate statisti
 But for now, relax and enjoy being able to explore the factors affecting fish communities in the Barents Sea.
 
 <center> <img src="barents_sea.png" alt="anosim" style="width: 800px;"/> </center>
-<i> Figure 8 - The Barents Sea </i>
+<i> Figure 10 - The Barents Sea </i>
 
 <br/>
 <br/>
