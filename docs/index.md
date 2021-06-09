@@ -18,7 +18,7 @@ Created by Kai Westwell
 
 #### <a href="#summary"> Summary</a>
 
-This tutorial will cover some of the basic methods in analysing multivariate data. You will learn what multivariate data is, some of the ways you can analyse these kinds of data, and then you can practice it for yourself!
+This tutorial will cover some of the basic methods in analysing multivariate data. You will learn what multivariate data are, some of the ways you can analyse these kinds of data, and then you can practice it for yourself!
 ---------------------------
 
 ## Introduction
@@ -45,7 +45,7 @@ You will already be familiar with bivariate statistical tests (where ther are 2 
 <a name="section1b"></a>
 
 ### NMDS
-NMDS plots are used to condense multivariate data into a 2d representation of those data. The distance between points on the plots shows how similar or dissimilar they are from each other, relative to the variables that you are looking at. This is great for species count data, as you can condense a lot of data down into a single, easy to read plot. NMDS stands for non-metric multidimensional scaling...sounds kind of confusing, so let's break this down. Non-metric refers to the fact that the data is ranked, and doesn't have a linear pattern to it. As it uses rank data, the assumptions of normality do not need to be met when running this analysis, which can be very useful when analysing species count data. Multidimensional refers to the data having multiple variables, and being condensed into a 2-dimensional (or 3d) plane. And finally scaling refers to the ratio between the real data and the 2-d representation of it generated through the nmds analysis. <br/>
+NMDS plots are used to condense multivariate data into a 2d representation of those data. The distance between points on the plots shows how similar or dissimilar they are from each other, relative to the variables that you are looking at. This is great for species count data, as you can condense a lot of data down into a single, easy to read plot. NMDS stands for non-metric multidimensional scaling...sounds kind of confusing, so let's break this down. Non-metric refers to the fact that the data are ranked, and doesn't have a linear pattern to it. As it uses rank data, the assumptions of normality do not need to be met when running this analysis, which can be very useful when analysing species count data. Multidimensional refers to the data having multiple variables, and being condensed into a 2-dimensional (or 3d) plane. And finally scaling refers to the ratio between the real data and the 2-d representation of it generated through the nmds analysis. <br/>
 Now that we understand what nmds plots are, we can look at some of the practical considerations. One of the main decisions you have to make when running these analyses is what distance matrix to use. This will decide how R calculates the distance between each point. A good choice for species data is often Bray-Curtis. This will take into account presence/absence data as well as the abundance, so it includes more information than some of the alternatives. Once we have run the analysis, we need to look at the stress value. This tells you how well the relationship between points has been represented on this 2-d plane. It is generally accepted that a stress value below 0.2 suggests the model is good, but we'll see how this works in practice soon.
 
 <a name="section1c"></a>
@@ -334,7 +334,7 @@ Steps:
 
 ## Summary
 
-Congratulations! You are now able to perform two different multivariate statistical tests. But there are so many more to learn! A further test you could perform on this data is an indicator species analysis, to see which species are found statistically more abundantly in one group versus the other. Or, if you didn't want to group the environmental variables, instead keeping them as continuous scales, you could try a mantel test. You could also look into PCA, MANOVA, rarefaction and a range of other tests, so keep an eye out for future tutorials on these subjects. <br/>
+Congratulations! You are now able to perform two different multivariate statistical tests. But there are so many more to learn! A further test you could perform on these data is an indicator species analysis, to see which species are found statistically more abundantly in one group versus the other. Or, if you didn't want to group the environmental variables, instead keeping them as continuous scales, you could try a mantel test. You could also look into PCA, MANOVA, rarefaction and a range of other tests, so keep an eye out for future tutorials on these subjects. <br/>
 
 But for now, relax and enjoy being able to explore the factors affecting fish communities in the Barents Sea.
 

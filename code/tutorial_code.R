@@ -124,6 +124,19 @@ bar_temp <- anosim(mat_bar_spp, barents_env_raw$Temperature, distance = "bray", 
 bar_temp  # Significance means this looks good too, and relatively low R statistic suggests similarity between groups.
 
 
+# SIMPER
+
+# SIMPER looking for species contributing most to difference between depth groups
+simp_depth <- simper(mat_bar_spp, barents_env$Depth_cat)
+simp_depth
+summary(simp_depth, ordered = TRUE, digits = 3)
+
+# SIMPER looking for species contributing most to difference between temperature groups
+simp_temp <- simper(mat_bar_spp, barents_env$Temp_cat)
+simp_temp
+summary(simp_temp, ordered = TRUE, digits = 3)
+
+
 # Challenge data
 barents_env_chal <- barents_env_raw %>% 
   mutate(lat_cat=cut(Latitude, breaks=c(-Inf, 72, 74, Inf), labels=c("south","centre","north"))) %>% 
